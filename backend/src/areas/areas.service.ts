@@ -14,7 +14,7 @@ export class AreasService {
             const nuevaArea = this.areaRepository.create(area)
             return this.areaRepository.save(nuevaArea)
         }
-        return new HttpException('El nombre del área ya existe', HttpStatus.BAD_REQUEST)
+        return new HttpException('El nombre del área ya existe', HttpStatus.CONFLICT)
     }
 
     async obtenerArea(id: number) {
